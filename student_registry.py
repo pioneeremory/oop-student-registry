@@ -6,7 +6,7 @@ class Student:
         self.subject = subject
 
     def __str__(self):
-        return "Student 1: Name: Francisco, Age: 15, Grade: 12th"
+        return f"Student 1: Name: {self.name}, Age: {self.age}, Grade: {self.grade}"
 
     @property
     def get_name(self):
@@ -14,7 +14,7 @@ class Student:
     
     @get_name.setter
     def set_name(self, new_name):
-        if new_name.length >= 3 and new_name.isalnum() and ' ' not in new_name and new_name.istitle():
+        if len(new_name) >= 3 and new_name.isalnum() and ' ' not in new_name and new_name.istitle():
             self._name = new_name
 
     @property
@@ -36,15 +36,29 @@ class Student:
         if new_grade in grade_list:
             self._grade = new_grade
 
-    def advance(self, _grade, years_advanced):
-        self.years_advanced = years_advanced
-        return "Francisco has advanced to the 13th grade"
+    # def advance(self, years_advanced):
+    #     if:
+    #         self.years_advanced = years_advanced
+    #     return "Francisco has advanced to the 13th grade"
     
     def study(self, subject):
         self.subject = subject
         return "Francisco is studying Computer Science"
     
 
-student1 = Student("Sandy", 11, "12th", "Writing")
+student1 = Student("Sandy")
+print(student1.get_name)
+print(student1.get_grade)
+print(student1.get_age)
+
+# student1.set_name = "Timothy"
+# print(student1.get_name)
+
+# student1.set_grade = "10"
+# print(student1.get_grade)
+
+# student1.set_age = 15
+# print(student1.get_age)
+
 
 
